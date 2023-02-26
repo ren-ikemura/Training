@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button-delete">削除ボタン</button>
+    <!-- このボタンを押したら「削除！」というポップアップを表示したい -->
+    <button id="button-update">更新ボタン</button>
+    <!-- このボタンを押したら「更新！」というポップアップを表示したい -->
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("DOMContentLoaded");
+
+      // 削除ボタンのDOMを取得
+      const buttonDelete = document.getElementById("button-delete");
+      // 更新ボタンのDOMを取得
+      const buttonUpdate = document.getElementById("button-update");
+      // 削除ボタンにクリックイベントを仕掛ける
+      buttonDelete.addEventListener("click", () => {
+        // クリックされた時に動く処理
+        alert("削除！");
+      });
+      // 更新ボタンにクリックイベントを仕掛ける
+      buttonUpdate.addEventListener("click", () => {
+        // クリックされた時に動く処理
+        alert("更新！");
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex3</title>
+  </head>
+  <body>
+    <input type="text" placeholder="GitHubアカウント名" id="github-name" />
+    <button onclick="fetchRepositories()">リポジトリ取得</button>
+    <ul id="repository-lists"></ul>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const BASE_API_URL = "https://api.github.com/users";
+
+    const fetchRepositories = async () => {
+      const targetRepoName = document.getElementById("github-name").value;
+      const repoList = document.getElementById("repository-lists");
+      if (!targetRepoName) {
+        repoList.innerHTML = "GitHubのアカウント名を入力してください";
+        return;
+      }
+      try {
+        const res = await axios.get(`${BASE_API_URL}/${targetRepoName}/repos`);
+        repoList.innerHTML = res.data.map((repo) => {
+          return `<li><a href="${repo.html_url}">${repo.name}</a></li>`;
+        });
+      } catch {
+        alert("error");
+      }
+    };
+  </script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex1</title>
+  </head>
+  <body>
+    <p>テキストエリアの内容をアラートで出す</p>
+    <textarea id="textarea"></textarea>
+    <button id="button">アラート</button>
+    <!-- このボタンを押したら「更新！」というポップアップを表示したい -->
+  </body>
+  <script>
+    const button = document.getElementById("button");
+    button.addEventListener("click", () => {
+      const text = document.getElementById("textarea").value;
+      alert(text);
+    });
+  </script>
+</html>

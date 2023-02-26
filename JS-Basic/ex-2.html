@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex2</title>
+  </head>
+  <body>
+    <label for="amount">数値</label>
+    <input type="number" name="amount" id="js-amount" />
+    <button id="js-add-button">増やす</button>
+    <button id="js-minus-button">減らす</button>
+
+    <p>結果</p>
+    <p id="js-result">0</p>
+  </body>
+  <script>
+    const addButton = document.getElementById("js-add-button");
+    const minusButton = document.getElementById("js-minus-button");
+    addButton.addEventListener("click", () => {
+      const number = Number(document.getElementById("js-amount").value);
+      const total = document.getElementById("js-result");
+      total.innerText = Number(total.innerText) + number;
+    });
+    minusButton.addEventListener("click", () => {
+      const number = Number(document.getElementById("js-amount").value);
+      const total = document.getElementById("js-result");
+      total.innerText = Number(total.innerText) - number;
+    });
+  </script>
+</html>
