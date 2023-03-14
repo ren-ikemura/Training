@@ -1866,3 +1866,33 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 210ms (Views: 189.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/login" for ::1 at 2023-03-15 00:35:37 +1100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (5.8ms)
+Completed 200 OK in 73ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2023-03-15 00:35:44 +1100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (7.3ms)
+Completed 200 OK in 72ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2023-03-15 00:36:33 +1100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.slim within layouts/application
+  Rendered sessions/new.html.slim within layouts/application (8.2ms)
+Completed 200 OK in 93ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2023-03-15 00:36:41 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (24.4ms)
+Completed 200 OK in 105ms (Views: 82.0ms | ActiveRecord: 3.9ms)
+
+

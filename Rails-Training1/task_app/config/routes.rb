@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   # ログイン画面からPOST
   post '/login', to: 'sessions#create'
+  # ログアウト
+  delete '/logout', to: 'sessions#destroy'
   namespace :admin do
     resources :users
   end
