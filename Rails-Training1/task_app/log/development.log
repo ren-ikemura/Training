@@ -1,0 +1,872 @@
+Started GET "/" for ::1 at 2023-03-09 07:18:32 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb (10.8ms)
+Completed 200 OK in 51ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTasks (20230308203559)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20230308203559_create_tasks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230308203559"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-08 20:38:13.042198"], ["updated_at", "2023-03-08 20:38:13.042198"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2023-03-09 07:42:05 +1100
+  
+NoMethodError (undefined method `resouces' for #<ActionDispatch::Routing::Mapper:0x00007fcddcad6478>
+Did you mean?  resources
+               resource):
+  
+config/routes.rb:6:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2023-03-09 07:42:52 +1100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  Rendered tasks/index.html.slim within layouts/application (32.2ms)
+Completed 200 OK in 4172ms (Views: 4151.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2023-03-09 07:46:32 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  Rendered tasks/index.html.slim within layouts/application (27.7ms)
+Completed 200 OK in 193ms (Views: 186.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2023-03-09 10:15:40 +1100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (580.2ms)
+Completed 500 Internal Server Error in 643ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fcde0e51158>:0x00007fcde0d97668>):
+     5: 
+     6: = form_with model: @task, local: true do |f|
+     7: .form-group
+     8:   = f.label :name
+     9:   = f.text_field :name, class: 'form-control', id: 'task_name'
+    10:   
+    11: .form-group
+  
+app/views/tasks/new.html.slim:8:in `_app_views_tasks_new_html_slim__476028862083064569_70261109067040'
+Started GET "/tasks/new" for ::1 at 2023-03-09 10:17:26 +1100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (650.3ms)
+Completed 200 OK in 744ms (Views: 737.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for ::1 at 2023-03-09 10:24:41 +1100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FyTylQfHIBSDj6P0+Sxmiai97e0k2bQ6uPXIiF2sGgNrvaXkca70XKgE+85d56kz8nwqVoZY4v02OMDFdhhefA==", "task"=>{"name"=>"test1", "description"=>"テスト1詳細"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:14
+  [1m[36mTask Create (12.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "test1"], ["description", "テスト1詳細"], ["created_at", "2023-03-08 23:24:41.927110"], ["updated_at", "2023-03-08 23:24:41.927110"]]
+  ↳ app/controllers/tasks_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:14
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 57ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 10:24:41 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  Rendered tasks/index.html.slim within layouts/application (9.3ms)
+Completed 200 OK in 94ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/tasks/new" for ::1 at 2023-03-09 11:07:27 +1100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Malformed indentation
+  /Users/rinashirai/study/runteq/Rails-Training1/task_app/app/views/layouts/application.html.slim, Line 16, Column 4
+    = yield
+    ^
+):
+    13:   .container
+    14:   - if flash.notice,present?
+    15:       .alert.alert-success= flash.notice
+    16:     = yield
+  
+app/views/layouts/application.html.slim:16
+Started GET "/tasks/new" for ::1 at 2023-03-09 11:07:41 +1100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/rinashirai/study/runteq/Rails-Training1/task_app/app/views/layouts/application.html.slim:14: syntax error, unexpected ',', expecting keyword_then or ';' or '\n'
+; if flash.notice,present?; 
+                 ^
+/Users/rinashirai/study/runteq/Rails-Training1/task_app/app/views/layouts/application.html.slim:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.slim:14: syntax error, unexpected ',', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.slim:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/tasks/new" for ::1 at 2023-03-09 11:08:00 +1100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (11.3ms)
+Completed 200 OK in 109ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2023-03-09 11:08:10 +1100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (7.2ms)
+Completed 200 OK in 62ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 11:54:45 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (62.3ms)
+Completed 200 OK in 149ms (Views: 131.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 11:54:47 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (48.6ms)
+Completed 200 OK in 144ms (Views: 116.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 11:58:17 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (10.5ms)
+Completed 200 OK in 92ms (Views: 81.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 13:08:50 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (12.4ms)
+Completed 200 OK in 83ms (Views: 75.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2023-03-09 13:09:32 +1100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (5.4ms)
+Completed 200 OK in 91ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 13:10:24 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (409.4ms)
+Completed 500 Internal Server Error in 434ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x00007fcde6a6a8e0>:0x00007fcddcde2bf8>
+Did you mean?  @task):
+    21:         th= Task.human_attribute_name(:updated_at)
+    22:         td= @task.updated_at
+    23:       
+    24:       = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+  
+app/views/tasks/show.html.slim:24:in `_app_views_tasks_show_html_slim___233621408965749937_70261075301500'
+Started GET "/tasks/1" for ::1 at 2023-03-09 13:10:39 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (568.9ms)
+Completed 500 Internal Server Error in 596ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x00007fcde6a6a8e0>:0x00007fcde04e30a8>
+Did you mean?  @task):
+    21:         th= Task.human_attribute_name(:updated_at)
+    22:         td= @task.updated_at
+    23:       
+    24:     = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+  
+app/views/tasks/show.html.slim:24:in `_app_views_tasks_show_html_slim___233621408965749937_70261104123360'
+Started GET "/tasks/1" for ::1 at 2023-03-09 13:11:04 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (473.4ms)
+Completed 500 Internal Server Error in 522ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x00007fcde6a6a8e0>:0x00007fcde0ac1768>
+Did you mean?  @task):
+    21:       th= Task.human_attribute_name(:updated_at)
+    22:       td= @task.updated_at
+    23:       
+    24: = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+  
+app/views/tasks/show.html.slim:24:in `_app_views_tasks_show_html_slim___233621408965749937_70261107231320'
+Started GET "/tasks/1" for ::1 at 2023-03-09 13:11:34 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (13.4ms)
+Completed 200 OK in 104ms (Views: 94.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 13:12:47 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (10.6ms)
+Completed 200 OK in 81ms (Views: 74.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 13:13:28 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (9.9ms)
+Completed 200 OK in 125ms (Views: 115.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2023-03-09 13:14:07 +1100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:21
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (4.6ms)
+Completed 200 OK in 110ms (Views: 87.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 13:14:10 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (14.2ms)
+Completed 200 OK in 102ms (Views: 93.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2023-03-09 13:14:14 +1100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:21
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (5.6ms)
+Completed 200 OK in 104ms (Views: 90.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2023-03-09 13:15:50 +1100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:21
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (10.6ms)
+Completed 200 OK in 79ms (Views: 65.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/tasks/1" for ::1 at 2023-03-09 13:17:46 +1100
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for TasksController):
+  
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.6.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.6.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.6.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.6.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/tasks/1" for ::1 at 2023-03-09 13:19:21 +1100
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/6Y0OzMKjc+umpxcGicXtIDenOPUW3Oq063RRHZtEkODP2NKRWNZh4URxGa+7NgO2h9bWHbaJW1dYNkJXdlWPA==", "task"=>{"name"=>"test1", "description"=>"テスト1詳細 編集済"}, "commit"=>"Update Task", "id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:26
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "テスト1詳細 編集済"], ["updated_at", "2023-03-09 02:19:21.724102"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:26
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:26
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 29ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 13:19:21 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (12.0ms)
+Completed 200 OK in 102ms (Views: 93.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 13:19:25 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (14.0ms)
+Completed 200 OK in 117ms (Views: 105.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2023-03-09 16:07:28 +1100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:21
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (7.3ms)
+Completed 200 OK in 75ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/tasks/1" for ::1 at 2023-03-09 16:07:31 +1100
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T6NfraAiKQMbWg/kSaIbaasV7AVTHdKbwVtG1itwSE5JMPhq3OKUmKH+3hcyVfB/eegpZPVyB2HjciiHcYRM2A==", "task"=>{"name"=>"test1", "description"=>"テスト1詳細 編集済2"}, "commit"=>"Update Task", "id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:26
+  [1m[36mTask Update (7.7ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "テスト1詳細 編集済2"], ["updated_at", "2023-03-09 05:07:31.119385"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:26
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:26
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 17ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:07:31 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (8.5ms)
+Completed 200 OK in 69ms (Views: 64.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/new" for ::1 at 2023-03-09 16:09:47 +1100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (4.4ms)
+  Rendered tasks/new.html.slim within layouts/application (14.9ms)
+Completed 200 OK in 63ms (Views: 54.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2023-03-09 16:09:49 +1100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (5.1ms)
+  Rendered tasks/new.html.slim within layouts/application (11.4ms)
+Completed 200 OK in 153ms (Views: 147.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for ::1 at 2023-03-09 16:11:17 +1100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+zacq484RdhDfardbojWOlN457viuhWO3/hCQBVFAHSHr8va+VGRkGj28ufKQxmACbkgAEA7Q0lRNUoNPvFECw==", "task"=>{"name"=>"test2", "description"=>"testtest"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:16
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "test2"], ["description", "testtest"], ["created_at", "2023-03-09 05:11:17.837292"], ["updated_at", "2023-03-09 05:11:17.837292"]]
+  ↳ app/controllers/tasks_controller.rb:16
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:16
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:11:17 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (9.5ms)
+Completed 200 OK in 60ms (Views: 54.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/2/edit" for ::1 at 2023-03-09 16:11:20 +1100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:21
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (9.0ms)
+  Rendered tasks/edit.html.slim within layouts/application (17.5ms)
+Completed 200 OK in 84ms (Views: 69.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tasks/2" for ::1 at 2023-03-09 16:11:23 +1100
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38HD4RdgqXvZoJ+eH76Dl1LloQIUrlD+A0yva0j1c0y0j56tZeeh8k0pTndk9XyJc9Xh3bFQf6eoQMxVuDK26g==", "task"=>{"name"=>"test2", "description"=>"testtest2"}, "commit"=>"Update Task", "id"=>"2"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:26
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "testtest2"], ["updated_at", "2023-03-09 05:11:23.869747"], ["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:26
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:26
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 12ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:11:23 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (16.3ms)
+Completed 200 OK in 88ms (Views: 82.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:15:38 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (327.5ms)
+Completed 500 Internal Server Error in 346ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007fcddc70be38>:0x00007fcddb7805b8>):
+    19:         / task/[id]/editのURLが作られる
+    20:         td= link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+    21:         / link_toのdataオプションにconfirmを設定すると、クリックしたときに確認ダイアログを出してくれる
+    22:         td= link_to '削除', task, method: delete, data: {confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-primary mr-3'
+  
+app/views/tasks/index.html.slim:22:in `block in _app_views_tasks_index_html_slim__3433869716870092922_70261073150400'
+app/views/tasks/index.html.slim:14:in `_app_views_tasks_index_html_slim__3433869716870092922_70261073150400'
+Started GET "/tasks" for ::1 at 2023-03-09 16:16:00 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (10.8ms)
+Completed 200 OK in 94ms (Views: 69.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:16:16 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (18.4ms)
+Completed 200 OK in 103ms (Views: 75.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:16:37 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (27.6ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/tasks/1/edit":String):
+    17:         td= link_to task.name, task
+    18:         td= task.created_at
+    19:         / task/[id]/editのURLが作られる
+    20:         td= link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+    21:           / link_toのdataオプションにconfirmを設定すると、クリックしたときに確認ダイアログを出してくれる
+    22:           = link_to '削除', task, method: :delete, data: {confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+  
+app/views/tasks/index.html.slim:20:in `block in _app_views_tasks_index_html_slim__3433869716870092922_70261109387940'
+app/views/tasks/index.html.slim:14:in `_app_views_tasks_index_html_slim__3433869716870092922_70261109387940'
+Started GET "/tasks" for ::1 at 2023-03-09 16:17:22 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/tasks/1/edit":String):
+    17:         td= link_to task.name, task
+    18:         td= task.created_at
+    19:         / task/[id]/editのURLが作られる
+    20:         td= link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+    21:           / link_toのdataオプションにconfirmを設定すると、クリックしたときに確認ダイアログを出してくれる
+    22:           td= link_to '削除', task, method: :delete, data: {confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+  
+app/views/tasks/index.html.slim:20:in `block in _app_views_tasks_index_html_slim__3433869716870092922_70261136507660'
+app/views/tasks/index.html.slim:14:in `_app_views_tasks_index_html_slim__3433869716870092922_70261136507660'
+Started GET "/tasks" for ::1 at 2023-03-09 16:17:47 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (26.7ms)
+Completed 200 OK in 100ms (Views: 94.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:18:14 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (10.8ms)
+Completed 200 OK in 80ms (Views: 71.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:18:25 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (23.3ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/tasks/1/edit":String):
+    17:         td= link_to task.name, task
+    18:         td= task.created_at
+    19:         / task/[id]/editのURLが作られる
+    20:         td= link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+    21:           / link_toのdataオプションにconfirmを設定すると、クリックしたときに確認ダイアログを出してくれる
+    22:           = link_to '削除', task, method: :delete, data: {confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+  
+app/views/tasks/index.html.slim:20:in `block in _app_views_tasks_index_html_slim__3433869716870092922_70261157679880'
+app/views/tasks/index.html.slim:14:in `_app_views_tasks_index_html_slim__3433869716870092922_70261157679880'
+Started GET "/tasks" for ::1 at 2023-03-09 16:20:41 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (8.5ms)
+Completed 200 OK in 71ms (Views: 61.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:20:48 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (7.6ms)
+Completed 200 OK in 64ms (Views: 58.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:21:21 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (16.3ms)
+Completed 200 OK in 113ms (Views: 97.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2023-03-09 16:22:32 +1100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:21
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (4.9ms)
+  Rendered tasks/edit.html.slim within layouts/application (14.8ms)
+Completed 200 OK in 81ms (Views: 73.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:22:35 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (323.9ms)
+Completed 500 Internal Server Error in 347ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x00007fcddc70be38>:0x00007fcdea0ac570>
+Did you mean?  @task):
+    22:       td= @task.updated_at
+    23: 
+    24: = link_to '編集', edit_task_path, class: 'btn btn-primary mr-3'
+    25: = link_to '削除', task, method: :delete, data: {confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+  
+app/views/tasks/show.html.slim:25:in `_app_views_tasks_show_html_slim___233621408965749937_70261185800120'
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:25:31 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (327.6ms)
+Completed 500 Internal Server Error in 355ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x00007fcddc70be38>:0x00007fcddc6d37b8>
+Did you mean?  @task):
+    22:       td= @task.updated_at
+    23: 
+    24: = link_to '編集', edit_task_path, class: 'btn btn-primary mr-3'
+    25: = link_to '削除', @task, method: :delete, data: {confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+    26: 
+    27: p task
+  
+app/views/tasks/show.html.slim:25:in `_app_views_tasks_show_html_slim___233621408965749937_70261071610100'
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:26:02 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (14.9ms)
+Completed 200 OK in 80ms (Views: 68.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:26:10 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (16.1ms)
+Completed 200 OK in 102ms (Views: 94.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:26:20 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Unknown line indicator
+  /Users/rinashirai/study/runteq/Rails-Training1/task_app/app/views/tasks/show.html.slim, Line 27, Column 0
+    @task
+    ^
+):
+    24: = link_to '編集', edit_task_path, class: 'btn btn-primary mr-3'
+    25: = link_to '削除', @task, method: :delete, data: {confirm: "タスク「#{@task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+    26: 
+    27: @task
+  
+app/views/tasks/show.html.slim:27
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:26:42 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (11.2ms)
+Completed 200 OK in 87ms (Views: 79.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:27:03 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (22.2ms)
+Completed 200 OK in 87ms (Views: 77.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:27:11 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (11.5ms)
+Completed 200 OK in 79ms (Views: 67.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/1" for ::1 at 2023-03-09 16:33:03 +1100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (7.2ms)
+Completed 200 OK in 71ms (Views: 46.4ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/tasks/1" for ::1 at 2023-03-09 16:33:06 +1100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y2aGstoa8ofP637pb7ke5El7/aFzvGGzXJmARgdwtR0f/9HDrHMmz+RgJtPLctFeE7o6GtE9N3TSVIgLLMTxYg==", "id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:32
+  [1m[36mTask Destroy (6.5ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:32
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:32
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 14ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/tasks" for ::1 at 2023-03-09 16:33:06 +1100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (10.7ms)
+Completed 200 OK in 87ms (Views: 81.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeTaskNameNotNull (20230310013346)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20230310013346_change_task_name_not_null.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atasks" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20230310013346_change_task_name_not_null.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "atasks" ("id","name","description","created_at","updated_at")
+                     SELECT "id","name","description","created_at","updated_at" FROM "tasks"[0m
+  ↳ db/migrate/20230310013346_change_task_name_not_null.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "tasks"[0m
+  ↳ db/migrate/20230310013346_change_task_name_not_null.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "description" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20230310013346_change_task_name_not_null.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tasks" ("id","name","description","created_at","updated_at")
+                     SELECT "id","name","description","created_at","updated_at" FROM "atasks"[0m
+  ↳ db/migrate/20230310013346_change_task_name_not_null.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atasks"[0m
+  ↳ db/migrate/20230310013346_change_task_name_not_null.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230310013346"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (7.9ms)[0m  [1m[32mINSERT INTO "tasks" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-03-10 01:35:58.226412"], ["updated_at", "2023-03-10 01:35:58.226412"]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-03-10 02:12:41.078018"], ["updated_at", "2023-03-10 02:12:41.078018"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "テスト"], ["created_at", "2023-03-10 02:16:19.263534"], ["updated_at", "2023-03-10 02:16:19.263534"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/tasks" for ::1 at 2023-03-10 14:43:14 +1100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (20.5ms)
+Completed 200 OK in 89ms (Views: 75.2ms | ActiveRecord: 1.7ms)
+
+

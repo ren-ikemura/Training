@@ -1,0 +1,23 @@
+h1 タスク一覧
+/ 以下の = はRubyのコードを実行する、の意味
+/ 実行するだけで画面に出力しない場合は - を使う
+= link_to '新規登録', new_task_path, class: 'btn btn-primary'
+/ new_task_path：　URLヘルパーメソッド。　呼び出すと"/tasks/new"という文字列が得られる。href属性になる。
+
+.mb-3
+table.table.table-hover
+  thread.thread-default
+    tr
+      th= Task.human_attribute_name(:name)
+      th= Task.human_attribute_name(:created_at)
+    tbody
+      - @tasks.each do |task|
+        tr
+        / task/[タスクのid]のURLが作られる
+        td= link_to task.name, task
+        td= task.created_at
+        / task/[id]/editのURLが作られる
+        td
+          = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+          / link_toのdataオプションにconfirmを設定すると、クリックしたときに確認ダイアログを出してくれる
+          = link_to '削除', task, method: :delete, data: {confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
