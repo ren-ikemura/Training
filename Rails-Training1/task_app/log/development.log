@@ -870,3 +870,921 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 89ms (Views: 75.2ms | ActiveRecord: 1.7ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20230314052610)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20230314052610_create_users.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20230314052610_create_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20230314052610_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230314052610"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "テストユーザー１"], ["email", "test1@test.com"], ["password_digest", "digest"], ["created_at", "2023-03-14 05:28:37.777261"], ["updated_at", "2023-03-14 05:28:37.777261"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "テストユーザー２"], ["email", "test2@test.com"], ["password_digest", "$2a$12$GAER0MZ07cHcbDI6bHxH6.Vj8GjzM7Qic2WAelb2aquu3sn6FC3aG"], ["created_at", "2023-03-14 05:32:39.959968"], ["updated_at", "2023-03-14 05:32:39.959968"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddAdminToUsers (20230314053530)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddAdminToUsers (20230314053530)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 0 NOT NULL[0m
+  ↳ db/migrate/20230314053530_add_admin_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230314053530"]]
+  ↳ bin/rails:9
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2023-03-14 16:53:56 +1100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.slim:14
+  Rendered tasks/index.html.slim within layouts/application (81.8ms)
+Completed 200 OK in 1393ms (Views: 1336.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/users" for ::1 at 2023-03-14 16:54:05 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  Rendered admin/users/index.html.slim within layouts/application (6.8ms)
+Completed 200 OK in 142ms (Views: 127.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 16:54:16 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (6.1ms)
+Completed 200 OK in 130ms (Views: 91.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 17:00:50 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (42.1ms)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/rinashirai/study/runteq/Training/Rails-Training1/task_app/app/views/admin/users/new.html.slim:11: syntax error, unexpected keyword_class, expecting keyword_end
+...ntrols2 = f.label :adminm class: 'form-check-label' do; 
+...                          ^~~~~
+/Users/rinashirai/study/runteq/Training/Rails-Training1/task_app/app/views/admin/users/new.html.slim:11: syntax error, unexpected keyword_do_block, expecting keyword_end
+...nm class: 'form-check-label' do; 
+...                             ^~
+/Users/rinashirai/study/runteq/Training/Rails-Training1/task_app/app/views/admin/users/new.html.slim:20: syntax error, unexpected keyword_end, expecting end-of-input
+; end; @output_buffer.safe_concat(...
+  ^~~):
+  
+app/views/admin/users/new.html.slim:11: syntax error, unexpected keyword_class, expecting keyword_end
+app/views/admin/users/new.html.slim:11: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/admin/users/new.html.slim:20: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/admin/users/new" for ::1 at 2023-03-14 17:01:11 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (417.6ms)
+Completed 500 Internal Server Error in 452ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for #<#<Class:0x00007f9b0dbc5d40>:0x00007f9b14fc5ce0>):
+    1: h1 ユーザーの新規作成
+    2: 
+    3: = form_with model: @user, local: true do |f|
+    4:   .form-group
+    5:     = f.label :name
+    6:     = f.text_field :name, class: 'form-control', id: 'task_name'
+  
+app/views/admin/users/new.html.slim:3:in `_app_views_admin_users_new_html_slim___3890847749834584164_70152024372100'
+Started GET "/admin/users/new" for ::1 at 2023-03-14 17:02:03 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (83.1ms)
+Completed 200 OK in 187ms (Views: 180.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 17:18:31 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (98.5ms)
+Completed 200 OK in 250ms (Views: 239.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/users" for ::1 at 2023-03-14 17:22:30 +1100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"86TF3k5LpqBkSdwnYBUkwDt2N4tCAaPLZRfxdJuXzmWPPZKvOCJy6E/ChB3E3ut6YbfwMOCA9Qzr2vk5sCOKGg==", "user"=>{"name"=>"テストユーザー３", "email"=>"test3@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `requiere' for #<ActionController::Parameters:0x00007fbe61a105f0>):
+  
+app/controllers/admin/users_controller.rb:28:in `user_params'
+app/controllers/admin/users_controller.rb:7:in `create'
+Started POST "/admin/users" for ::1 at 2023-03-14 17:23:07 +1100
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"86TF3k5LpqBkSdwnYBUkwDt2N4tCAaPLZRfxdJuXzmWPPZKvOCJy6E/ChB3E3ut6YbfwMOCA9Qzr2vk5sCOKGg==", "user"=>{"name"=>"テストユーザー３", "email"=>"test3@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test3@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "テストユーザー３"], ["email", "test3@test.com"], ["password_digest", "$2a$12$YAKNekUmsMDfW2g/pjUgHO98tSZvfPEM6m/hEcdBlN4q5clX5jOoa"], ["created_at", "2023-03-14 06:23:08.461459"], ["updated_at", "2023-03-14 06:23:08.461459"]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:9
+Redirected to http://localhost:3000/admin/users/3
+Completed 302 Found in 524ms (ActiveRecord: 77.8ms)
+
+
+Started GET "/admin/users/3" for ::1 at 2023-03-14 17:23:08 +1100
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering admin/users/show.html.slim within layouts/application
+  Rendered admin/users/show.html.slim within layouts/application (26.1ms)
+Completed 200 OK in 518ms (Views: 505.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/users/3" for ::1 at 2023-03-14 17:33:17 +1100
+  
+SyntaxError (/Users/rinashirai/study/runteq/Training/Rails-Training1/task_app/app/controllers/admin/users_controller.rb:53: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/admin/users_controller.rb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/users" for ::1 at 2023-03-14 17:35:39 +1100
+  
+SyntaxError (/Users/rinashirai/study/runteq/Training/Rails-Training1/task_app/app/controllers/admin/users_controller.rb:53: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/admin/users_controller.rb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/users" for ::1 at 2023-03-14 17:37:00 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  Rendered admin/users/index.html.slim within layouts/application (3.0ms)
+Completed 200 OK in 67ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 17:37:09 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (55.7ms)
+Completed 200 OK in 118ms (Views: 98.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/admin/users" for ::1 at 2023-03-14 17:37:23 +1100
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UZSge9CUA2n3FPUJQjs8L8wc10YGUJ0qJgvxxioFV3ktDfcKpv3XIdyfrTPm8POVlt0Q/aTRy+2oxvmLAbETBg==", "user"=>{"name"=>"テストユーザー4", "email"=>"test4@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test4@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "テストユーザー4"], ["email", "test4@test.com"], ["password_digest", "$2a$12$KUxPQ9rdPlgrZTOODXxrUuC9.JbZ3arP12XU57kXrBxfM2o5.2PBK"], ["created_at", "2023-03-14 06:37:23.762460"], ["updated_at", "2023-03-14 06:37:23.762460"]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+Redirected to http://localhost:3000/admin/users/4
+Completed 302 Found in 288ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/admin/users/4" for ::1 at 2023-03-14 17:37:23 +1100
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  Rendering admin/users/show.html.slim within layouts/application
+  Rendered admin/users/show.html.slim within layouts/application (2.4ms)
+Completed 200 OK in 54ms (Views: 45.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/admin/users" for ::1 at 2023-03-14 17:37:51 +1100
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UZSge9CUA2n3FPUJQjs8L8wc10YGUJ0qJgvxxioFV3ktDfcKpv3XIdyfrTPm8POVlt0Q/aTRy+2oxvmLAbETBg==", "user"=>{"name"=>"テストユーザー5", "email"=>"test5@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test5@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "テストユーザー5"], ["email", "test5@test.com"], ["password_digest", "$2a$12$jBt8SUc8WDbrM0IxyMm0q.dyxdyovvrIY8YLzyyh2OXz8wz.304VC"], ["created_at", "2023-03-14 06:37:51.854330"], ["updated_at", "2023-03-14 06:37:51.854330"]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+Redirected to http://localhost:3000/admin/users/5
+Completed 302 Found in 310ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/admin/users/5" for ::1 at 2023-03-14 17:37:51 +1100
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  Rendering admin/users/show.html.slim within layouts/application
+  Rendered admin/users/show.html.slim within layouts/application (2.9ms)
+Completed 200 OK in 62ms (Views: 51.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/users/5" for ::1 at 2023-03-14 17:57:45 +1100
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  Rendering admin/users/show.html.slim within layouts/application
+  Rendered admin/users/show.html.slim within layouts/application (186.9ms)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `edit_user_path' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe6b17ded8>):
+    24:       th= User.human_attribute_name(:updated_at)
+    25:       td= @user.updated_at
+    26: 
+    27: = link_to '編集', edit_user_path, class: 'btn btn-primary mr-3'
+    28: = link_to '削除', @user, method: :delete, data: {confirm: "ユーザー「#{@user.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+  
+app/views/admin/users/show.html.slim:27:in `_app_views_admin_users_show_html_slim__2959388103064868235_70227908633520'
+Started GET "/admin/users/5" for ::1 at 2023-03-14 17:58:44 +1100
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  Rendering admin/users/show.html.slim within layouts/application
+  Rendered admin/users/show.html.slim within layouts/application (31.9ms)
+Completed 200 OK in 157ms (Views: 147.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/users/5/edit" for ::1 at 2023-03-14 17:58:47 +1100
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:29
+  Rendering admin/users/edit.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (241.6ms)
+  Rendered admin/users/edit.html.slim within layouts/application (253.0ms)
+Completed 500 Internal Server Error in 282ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe61e194a8>):
+     5: 
+     6: = form_with model: [:admin, @user], local: true do |f|
+     7: .form-group
+     8:   = f.label :name
+     9:   = f.text_field :name, class: 'form-control', id: 'task_name'
+    10: .form-group
+    11:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/_form.html.slim:8:in `_app_views_admin_users__form_html_slim___1599485989610166226_70227901020940'
+app/views/admin/users/edit.html.slim:7:in `_app_views_admin_users_edit_html_slim__4392475075229662978_70227831345180'
+Started GET "/admin/users/5/edit" for ::1 at 2023-03-14 18:01:18 +1100
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:29
+  Rendering admin/users/edit.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (185.9ms)
+  Rendered admin/users/edit.html.slim within layouts/application (201.7ms)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe62b71e98>):
+     5: 
+     6: = form_with model: [:admin, @user], local: true do |f|
+     7: .form-group
+     8:   = f.label :name, '名前'
+     9:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    10: .form-group
+    11:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/_form.html.slim:8:in `_app_views_admin_users__form_html_slim___1599485989610166226_70227831459420'
+app/views/admin/users/edit.html.slim:7:in `_app_views_admin_users_edit_html_slim__4392475075229662978_70227838343420'
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:02:14 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (221.4ms)
+  Rendered admin/users/new.html.slim within layouts/application (230.2ms)
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe6a30f9a0>):
+     5: 
+     6: = form_with model: [:admin, @user], local: true do |f|
+     7: .form-group
+     8:   = f.label :name, '名前'
+     9:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    10: .form-group
+    11:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/_form.html.slim:8:in `_app_views_admin_users__form_html_slim___1599485989610166226_70227886196480'
+app/views/admin/users/new.html.slim:7:in `_app_views_admin_users_new_html_slim___2537788037337384541_70227885982280'
+Started GET "/admin/users" for ::1 at 2023-03-14 18:02:20 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendered admin/users/index.html.slim within layouts/application (193.8ms)
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe61e61028>):
+    1: h1 タスク一覧
+    2: / 以下の = はRubyのコードを実行する、の意味
+    3: / 実行するだけで画面に出力しない場合は - を使う
+    4: = link_to '新規登録', new_user_path, class: 'btn btn-primary'
+    5: / new_user_path：　URLヘルパーメソッド。　呼び出すと"/users/new"という文字列が得られる。href属性になる。
+    6: 
+    7: .mb-3
+  
+app/views/admin/users/index.html.slim:4:in `_app_views_admin_users_index_html_slim__756927894920271948_70227831492200'
+Started GET "/admin/users" for ::1 at 2023-03-14 18:02:56 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/rinashirai/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendered admin/users/index.html.slim within layouts/application (302.2ms)
+Completed 500 Internal Server Error in 330ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe65f4e860>):
+    1: h1 タスク一覧
+    2: / 以下の = はRubyのコードを実行する、の意味
+    3: / 実行するだけで画面に出力しない場合は - を使う
+    4: = link_to '新規登録', new_user_path, class: 'btn btn-primary'
+    5: / new_user_path：　URLヘルパーメソッド。　呼び出すと"/users/new"という文字列が得られる。href属性になる。
+    6: 
+    7: .mb-3
+  
+app/views/admin/users/index.html.slim:4:in `_app_views_admin_users_index_html_slim__756927894920271948_70227865559720'
+Started GET "/admin/users" for ::1 at 2023-03-14 18:03:16 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:14
+  Rendered admin/users/index.html.slim within layouts/application (219.5ms)
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe68761b68>):
+    14:       - @users.each do |user|
+    15:         tr
+    16:         / user/[タスクのid]のURLが作られる
+    17:         td= link_to user.name, user
+    18:         td= user.created_at
+    19:         / user/[id]/editのURLが作られる
+    20:         td
+  
+app/views/admin/users/index.html.slim:17:in `block in _app_views_admin_users_index_html_slim__756927894920271948_70227886543560'
+app/views/admin/users/index.html.slim:14:in `_app_views_admin_users_index_html_slim__756927894920271948_70227886543560'
+Started GET "/admin/users" for ::1 at 2023-03-14 18:04:26 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:14
+  Rendered admin/users/index.html.slim within layouts/application (205.4ms)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe686faf80>):
+    20:         td
+    21:           = link_to '編集', edit_admin_user_path(user), class: 'btn btn-primary mr-3'
+    22:           / link_toのdataオプションにconfirmを設定すると、クリックしたときに確認ダイアログを出してくれる
+    23:           = link_to '削除', user, method: :delete, data: {confirm: "タスク「#{user.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+  
+app/views/admin/users/index.html.slim:23:in `block in _app_views_admin_users_index_html_slim__756927894920271948_70227886333160'
+app/views/admin/users/index.html.slim:14:in `_app_views_admin_users_index_html_slim__756927894920271948_70227886333160'
+Started GET "/admin/users" for ::1 at 2023-03-14 18:04:51 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:14
+  Rendered admin/users/index.html.slim within layouts/application (23.7ms)
+Completed 200 OK in 149ms (Views: 129.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/users/1/edit" for ::1 at 2023-03-14 18:04:54 +1100
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:29
+  Rendering admin/users/edit.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (222.6ms)
+  Rendered admin/users/edit.html.slim within layouts/application (236.2ms)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe6859d6d8>):
+     5: 
+     6: = form_with model: [:admin, @user], local: true do |f|
+     7: .form-group
+     8:   = f.label :name, '名前'
+     9:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    10: .form-group
+    11:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/_form.html.slim:8:in `_app_views_admin_users__form_html_slim___1599485989610166226_70227831293780'
+app/views/admin/users/edit.html.slim:7:in `_app_views_admin_users_edit_html_slim__4392475075229662978_70227885618900'
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:06:26 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (217.1ms)
+  Rendered admin/users/new.html.slim within layouts/application (229.8ms)
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe61e516a0>):
+     5: 
+     6: = form_with model: [:admin, @user], local: true do |f|
+     7: .form-group
+     8:   = f.label :name, '名前'
+     9:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    10: .form-group
+    11:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/_form.html.slim:8:in `_app_views_admin_users__form_html_slim___1599485989610166226_70227901228140'
+app/views/admin/users/new.html.slim:7:in `_app_views_admin_users_new_html_slim___2537788037337384541_70227831460480'
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:06:47 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (188.4ms)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe6a299098>):
+     8: 
+     9: = form_with model: [:admin, @user], local: true do |f|
+    10: .form-group
+    11:   = f.label :name, '名前'
+    12:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    13: .form-group
+    14:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/new.html.slim:11:in `_app_views_admin_users_new_html_slim___2537788037337384541_70227900812640'
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:08:11 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (298.6ms)
+  Rendered admin/users/new.html.slim within layouts/application (314.6ms)
+Completed 500 Internal Server Error in 352ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe617155a8>):
+     5: 
+     6: = form_with model: [:admin, user], local: true do |f|
+     7: .form-group
+     8:   = f.label :name, '名前'
+     9:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    10: .form-group
+    11:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/_form.html.slim:8:in `_app_views_admin_users__form_html_slim___1599485989610166226_70227829247540'
+app/views/admin/users/new.html.slim:7:in `_app_views_admin_users_new_html_slim___2537788037337384541_70227827767900'
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:10:31 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (221.5ms)
+  Rendered admin/users/new.html.slim within layouts/application (241.1ms)
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe6a39f078>):
+     5: 
+     6: = form_with model: [:admin, user], local: true do |f|
+     7: .form-group
+     8:   = f.label :name, '名前'
+     9:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    10: .form-group
+    11:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/_form.html.slim:8:in `_app_views_admin_users__form_html_slim___1599485989610166226_70227831456640'
+app/views/admin/users/new.html.slim:7:in `_app_views_admin_users_new_html_slim___2537788037337384541_70227838353740'
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:11:50 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (169.9ms)
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe6a268060>):
+     8: 
+     9: = form_with model: [:admin, @user], local: true do |f|
+    10: .form-group
+    11:   = f.label :name, '名前'
+    12:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    13: .form-group
+    14:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/new.html.slim:11:in `_app_views_admin_users_new_html_slim___2537788037337384541_70227900712320'
+Started GET "/admin/users" for ::1 at 2023-03-14 18:12:04 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:17
+  Rendered admin/users/index.html.slim within layouts/application (45.6ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin?' for nil:NilClass):
+    19:         / admin/user/[ユーザーid]のURLが作られる
+    20:         td= link_to user.name, [:admin, user]
+    21:         td= user.email
+    22:         td= @user.admin? ? 'あり' : 'なし'
+    23:         td= user.created_at
+    24:         td= user.updated_at
+    25:         / admin/user/[id]/editのURLが作られる
+  
+app/views/admin/users/index.html.slim:22:in `block in _app_views_admin_users_index_html_slim__756927894920271948_70227863203320'
+app/views/admin/users/index.html.slim:17:in `_app_views_admin_users_index_html_slim__756927894920271948_70227863203320'
+Started GET "/admin/users" for ::1 at 2023-03-14 18:12:22 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:17
+  Rendered admin/users/index.html.slim within layouts/application (20.1ms)
+Completed 200 OK in 105ms (Views: 95.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:12:25 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/new.html.slim within layouts/application (184.8ms)
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fbe6b17fe68>:0x00007fbe6b1f2940>):
+     8: 
+     9: = form_with model: [:admin, @user], local: true do |f|
+    10: .form-group
+    11:   = f.label :name, '名前'
+    12:   = f.text_field :name, class: 'form-control', id: 'user_name'
+    13: .form-group
+    14:   = f.label :email, 'メールアドレス'
+  
+app/views/admin/users/new.html.slim:11:in `_app_views_admin_users_new_html_slim___2537788037337384541_70227908861060'
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:13:06 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (24.3ms)
+  Rendered admin/users/new.html.slim within layouts/application (42.8ms)
+Completed 200 OK in 145ms (Views: 126.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/users" for ::1 at 2023-03-14 18:13:10 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:17
+  Rendered admin/users/index.html.slim within layouts/application (11.3ms)
+Completed 200 OK in 78ms (Views: 62.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:13:12 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (8.0ms)
+  Rendered admin/users/new.html.slim within layouts/application (19.6ms)
+Completed 200 OK in 80ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/users" for ::1 at 2023-03-14 18:13:22 +1100
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mlUa4NsOEsu4i1wk3BTS+b+wxq0db6fneMjTWGrRy0SfAZhpswRvSUsiLTXZOFnfiGvp8Jl9jw/Snatg8vXWCA==", "user"=>{"name"=>"テストユーザー6", "email"=>"test6@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test6@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "テストユーザー6"], ["email", "test6@test.com"], ["password_digest", "$2a$12$8L9aZ2d3xk.y2dwr9T6vPeanOa97j5PCerq/XPCRz1jdKpkrsaimi"], ["created_at", "2023-03-14 07:13:22.982167"], ["updated_at", "2023-03-14 07:13:22.982167"]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+Redirected to http://localhost:3000/admin/users/6
+Completed 302 Found in 278ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/admin/users/6" for ::1 at 2023-03-14 18:13:22 +1100
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  Rendering admin/users/show.html.slim within layouts/application
+  Rendered admin/users/show.html.slim within layouts/application (9.4ms)
+Completed 200 OK in 63ms (Views: 55.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/users/6/edit" for ::1 at 2023-03-14 18:13:30 +1100
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:29
+  Rendering admin/users/edit.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (11.2ms)
+  Rendered admin/users/edit.html.slim within layouts/application (19.4ms)
+Completed 200 OK in 104ms (Views: 85.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/admin/users/6" for ::1 at 2023-03-14 18:13:37 +1100
+Processing by Admin::UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/T6/rpocUfFyl7FYpqdhyCPHyVq7iV1ljX2rjitokaysNvNCM0kpRw0jQnYtfQGGi+X7J3UvCutzcWLEAJZNuA==", "user"=>{"name"=>"テストユーザー6 new", "email"=>"test6@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"更新する", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:34
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "test6@test.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:35
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "テストユーザー6 new"], ["password_digest", "$2a$12$H2AnWdkkQ.45GeCqdmP53udRvRyP9BskAJtWDW2KLwq/RXTVUvZ.G"], ["updated_at", "2023-03-14 07:13:38.287322"], ["id", 6]]
+  ↳ app/controllers/admin/users_controller.rb:35
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:35
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 5.8ms)
+
+
+  
+NameError (undefined local variable or method `users_url' for #<Admin::UsersController:0x00007fbe61f39568>):
+  
+app/controllers/admin/users_controller.rb:36:in `update'
+Started PATCH "/admin/users/6" for ::1 at 2023-03-14 18:14:06 +1100
+Processing by Admin::UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/T6/rpocUfFyl7FYpqdhyCPHyVq7iV1ljX2rjitokaysNvNCM0kpRw0jQnYtfQGGi+X7J3UvCutzcWLEAJZNuA==", "user"=>{"name"=>"テストユーザー6 new", "email"=>"test6@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"更新する", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "test6@test.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:35
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$12$LyMw2YFNXOMGRbmJxLvn.uoaQQw/NelSADtSxMtEQcHxQWm3qXg9O"], ["updated_at", "2023-03-14 07:14:07.311016"], ["id", 6]]
+  ↳ app/controllers/admin/users_controller.rb:35
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:35
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 303ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/admin/users" for ::1 at 2023-03-14 18:14:07 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:17
+  Rendered admin/users/index.html.slim within layouts/application (9.7ms)
+Completed 200 OK in 61ms (Views: 52.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:14:42 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (7.8ms)
+  Rendered admin/users/new.html.slim within layouts/application (20.0ms)
+Completed 200 OK in 93ms (Views: 84.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/users" for ::1 at 2023-03-14 18:14:53 +1100
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q1gctN2AYXMJOLdgt9/4xI8OufTt4vf0okwg6Qlszi+uDJ49tYoc8fqRxnGy83PiuNWWqWnw3xwIGVjRkUjTYw==", "user"=>{"name"=>"テストユーザー7", "email"=>"test7@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test7@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "テストユーザー7"], ["email", "test7@test.com"], ["password_digest", "$2a$12$o9cETXS0p7pj2qRh094CuOAR2FoElVMCtdSRqKhd3pUXmkSPEISRS"], ["created_at", "2023-03-14 07:14:53.575539"], ["updated_at", "2023-03-14 07:14:53.575539"]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+Redirected to http://localhost:3000/admin/users/7
+Completed 302 Found in 297ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/admin/users/7" for ::1 at 2023-03-14 18:14:53 +1100
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  Rendering admin/users/show.html.slim within layouts/application
+  Rendered admin/users/show.html.slim within layouts/application (9.1ms)
+Completed 200 OK in 74ms (Views: 67.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users/7/edit" for ::1 at 2023-03-14 18:17:48 +1100
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:30
+  Rendering admin/users/edit.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (9.1ms)
+  Rendered admin/users/edit.html.slim within layouts/application (19.5ms)
+Completed 200 OK in 95ms (Views: 71.3ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/admin/users/7" for ::1 at 2023-03-14 18:17:51 +1100
+Processing by Admin::UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F1AtIIYyH4CyEasRoIHu06Ig0r23psjezunNKmwqAbtF7L82rRCpr0RHotxkJR/3nxca91HIyVKfelJpgbhWHQ==", "user"=>{"name"=>"テストユーザー7", "email"=>"test7@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"更新する", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:35
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:36
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "test7@test.com"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:36
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/users" for ::1 at 2023-03-14 18:17:51 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:17
+  Rendered admin/users/index.html.slim within layouts/application (17.9ms)
+Completed 200 OK in 80ms (Views: 69.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:18:17 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (9.9ms)
+  Rendered admin/users/new.html.slim within layouts/application (19.8ms)
+Completed 200 OK in 93ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/users" for ::1 at 2023-03-14 18:18:22 +1100
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ze7mZSh9uc3GwEcDpX8h7MYDEP36k7AOfo8T6iaSbUtgumTsQHfETzVpNhKgU6rK8dg/oH6BmObU2mvSvrZwBw==", "user"=>{"name"=>"asd", "email"=>"", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (11.7ms)
+  Rendered admin/users/new.html.slim within layouts/application (19.9ms)
+Completed 200 OK in 99ms (Views: 73.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/admin/users" for ::1 at 2023-03-14 18:18:40 +1100
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DMLFFP2T4RzUktU88t3p42WCCU6cViwC5WhY+tDC3jtwW5Jli/o1VP8ZjQZWFiZZP0PO9T7XesVrpVC3+3aaRA==", "user"=>{"name"=>"asd", "email"=>"asd@asd.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asd@asd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (8.3ms)
+  Rendered admin/users/new.html.slim within layouts/application (20.2ms)
+Completed 200 OK in 387ms (Views: 75.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/users" for ::1 at 2023-03-14 18:18:47 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:17
+  Rendered admin/users/index.html.slim within layouts/application (12.0ms)
+Completed 200 OK in 68ms (Views: 58.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:18:51 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (9.9ms)
+  Rendered admin/users/new.html.slim within layouts/application (18.0ms)
+Completed 200 OK in 89ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:18:58 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (9.0ms)
+  Rendered admin/users/new.html.slim within layouts/application (18.4ms)
+Completed 200 OK in 103ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/users" for ::1 at 2023-03-14 18:19:01 +1100
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2y/l1/5alnIVujxloNbBOfC9ejc8FFm5hCXTfp1V8Svee2dellDr8OYTTXSl+kofx2ZVargGcVEucKtGBXHsZw==", "user"=>{"name"=>"asd", "email"=>"", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:20
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (17.7ms)
+  Rendered admin/users/new.html.slim within layouts/application (39.2ms)
+Completed 200 OK in 162ms (Views: 150.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/users" for ::1 at 2023-03-14 18:21:40 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:17
+  Rendered admin/users/index.html.slim within layouts/application (34.6ms)
+Completed 200 OK in 116ms (Views: 100.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2023-03-14 18:21:42 +1100
+Processing by Admin::UsersController#new as HTML
+  Rendering admin/users/new.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (9.5ms)
+  Rendered admin/users/new.html.slim within layouts/application (17.5ms)
+Completed 200 OK in 79ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/users/7" for ::1 at 2023-03-14 18:21:46 +1100
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:9
+  Rendering admin/users/show.html.slim within layouts/application
+  Rendered admin/users/show.html.slim within layouts/application (9.6ms)
+Completed 200 OK in 70ms (Views: 56.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users/7/edit" for ::1 at 2023-03-14 18:21:49 +1100
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:30
+  Rendering admin/users/edit.html.slim within layouts/application
+  Rendered admin/users/_form.html.slim (9.0ms)
+  Rendered admin/users/edit.html.slim within layouts/application (17.8ms)
+Completed 200 OK in 104ms (Views: 94.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/admin/users/7" for ::1 at 2023-03-14 18:21:51 +1100
+Processing by Admin::UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tWH8xUm+YBy8ECZZFhXqmdPlb0BcoN9ej2RDpmH2Gofn3W7TYpzWM0pGL5TSsRu97tKnCrrO3tLe99zljGRNIQ==", "user"=>{"name"=>"テストユーザー7", "email"=>"test7@test.com", "admin"=>"0", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"更新する", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:36
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "test7@test.com"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/users_controller.rb:36
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 16ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/users" for ::1 at 2023-03-14 18:21:51 +1100
+Processing by Admin::UsersController#index as HTML
+  Rendering admin/users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.slim:17
+  Rendered admin/users/index.html.slim within layouts/application (15.2ms)
+Completed 200 OK in 80ms (Views: 71.1ms | ActiveRecord: 0.3ms)
+
+

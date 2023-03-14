@@ -1,0 +1,29 @@
+h1 タスク一覧
+/ 以下の = はRubyのコードを実行する、の意味
+/ 実行するだけで画面に出力しない場合は - を使う
+= link_to '新規登録', new_admin_user_path, class: 'btn btn-primary'
+/ new_user_path：　URLヘルパーメソッド。　呼び出すと"/users/new"という文字列が得られる。href属性になる。
+
+.mb-3
+table.table.table-hover
+  thread.thread-default
+    tr
+      th= User.human_attribute_name(:name)
+      th= User.human_attribute_name(:email)
+      th= User.human_attribute_name(:admin)
+      th= User.human_attribute_name(:created_at)
+      th= User.human_attribute_name(:updated)
+    tbody
+      - @users.each do |user|
+        tr
+        / admin/user/[ユーザーid]のURLが作られる
+        td= link_to user.name, [:admin, user]
+        td= user.email
+        td= user.admin? ? 'あり' : 'なし'
+        td= user.created_at
+        td= user.updated_at
+        / admin/user/[id]/editのURLが作られる
+        td
+          = link_to '編集', edit_admin_user_path(user), class: 'btn btn-primary mr-3'
+          / link_toのdataオプションにconfirmを設定すると、クリックしたときに確認ダイアログを出してくれる
+          = link_to '削除', [:admin, user], method: :delete, data: {confirm: "タスク「#{user.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
